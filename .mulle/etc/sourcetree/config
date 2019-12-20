@@ -1,0 +1,2 @@
+MulleObjCStandardFoundation;${MULLEOBJCSTANDARDFOUNDATION_NODETYPE:-tar};no-singlephase;387bec89-10d1-4615-86d0-8d96f3832069;${MULLEOBJCSTANDARDFOUNDATION_URL:-https://github.com/MulleFoundation/MulleObjCStandardFoundation/archive/${MULLE_BRANCH}.tar.gz};${MULLEOBJCSTANDARDFOUNDATION_BRANCH:-latest};;;
+src/jsmn.h;file;no-all-load,no-build,no-header,no-import,no-link,no-share,no-singlephase;04644ce5-88d5-4f8e-a488-0c84dc128244;https://raw.githubusercontent.com/zserge/jsmn/master/jsmn.h;;;;

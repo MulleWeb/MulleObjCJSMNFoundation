@@ -1,0 +1,23 @@
+{
+    friends = (
+        {
+            name = "Jodi Fischer";
+            userID = 8873;
+        },
+        {
+            name = "Bob Willis";
+            userID = 9876;
+        }
+    );
+    invitedBy = {
+        name = "Bob Willis";
+        userID = 9876;
+    };
+    likes = (
+        swimming,
+        movies,
+        tennis
+    );
+    name = "Jane Smith";
+    userID = 1234;
+}
