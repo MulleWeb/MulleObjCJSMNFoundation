@@ -35,6 +35,9 @@
 #include "jsmn.h"
 
 
+NSString  *MulleObjCJSMNErrorDomain = @"MulleObjCJSMNError";
+
+
 @implementation MulleObjCJSMNParser
 
 struct process_result
@@ -64,7 +67,12 @@ static inline struct process_result   *process_result_simple( id obj,
 struct process_context
 {
    char                   *js;
+   char                   *sentinel;
    struct process_result  space;
+   id                     yes;
+   id                     no;
+   NSNull                 *null;
+   jsmntok_t              *problem;
 };
 
 
@@ -93,6 +101,7 @@ static struct process_result  *process_tokens( struct process_context *p,
    switch( t->type)
    {
    case JSMN_UNDEFINED :
+      p->problem = t;
       return( NULL);
 
    case JSMN_PRIMITIVE :
@@ -102,17 +111,17 @@ static struct process_result  *process_tokens( struct process_context *p,
       {
       case 'n' :
          if( len == 4 && ! strncmp( start, "null", len))
-            return( process_result_simple( [NSNull null], &p->space));
+            return( process_result_simple( [p->null retain], &p->space));
          break;
 
       case 't' :
          if( len == 4 && ! strncmp( start, "true", len))
-            return( process_result_simple( @(YES), &p->space));
+            return( process_result_simple( [p->yes retain], &p->space));
          break;
 
       case 'f' :
          if( len == 5 && ! strncmp( start, "false", len))
-            return( process_result_simple( @(NO), &p->space));
+            return( process_result_simple( [p->no retain], &p->space));
          break;
 
       case '0' :
@@ -130,6 +139,7 @@ static struct process_result  *process_tokens( struct process_context *p,
          rval = _mulle_utf8_scan_longlong_decimal( &s, len, &nr);
          if( rval < 0)
             return( NULL);
+
          // consumed all, than its integer
          if( s == (mulle_utf8_t *) &start[ len])
          {
@@ -154,6 +164,8 @@ static struct process_result  *process_tokens( struct process_context *p,
             return( process_result_simple( obj, &p->space));
          }
       }
+
+      p->problem = t;
       return( NULL);
 
    case JSMN_STRING :
@@ -223,6 +235,8 @@ static struct process_result  *process_tokens( struct process_context *p,
        }
        return( process_result_make( obj, j + 1, &p->space));
    }
+
+   p->problem = t;
    return( NULL);
 }
 
@@ -241,6 +255,8 @@ static struct process_result  *process_tokens( struct process_context *p,
 
 - (void) reset
 {
+   [self setUserInfo:nil];
+
    jsmn_init( _parser);
 
    _tokcount   = 512;
@@ -265,6 +281,71 @@ static struct process_result  *process_tokens( struct process_context *p,
 }
 
 
+- (NSError *) errorWithName:(NSString *) name
+                      bytes:(void *) bytes
+                     length:(NSUInteger) length
+                      range:(NSRange) range
+{
+   char              *start;
+   char              *sentinel;
+   char              *line_end;
+   char              *line_start;
+   char              *s;
+   int               next;
+   NSMutableString   *reason;
+   unsigned long     lineno;
+
+   start    = bytes;
+   sentinel = &start[ length];
+
+   // figure out start of line and line number
+   for( s = &start[ range.location]; --s >= start;)
+      if( *s == '\r' || *s == '\n')
+         break;
+   line_start = s + 1;
+
+   for( s = &start[ range.location]; s < sentinel; s++)
+      if( *s == '\r' || *s == '\n')
+         break;
+   line_end = s;
+
+   // get linecount
+   lineno = length ? 1 : 0;
+   next   = 0;
+   for( s = line_start; --s >= start;)
+   {
+      if( *s == '\n' || (*s == '\r' && next != '\n'))
+         ++lineno;
+      next = *s;
+   }
+
+   reason = [NSMutableString stringWithFormat:@"JSON %@ error ", name];
+   if( range.length)
+      [reason appendFormat:@"at characters %ld \"%.*s\" ",
+                           (long) (&start[ range.location] - line_start),
+                           (int) range.length, &start[ range.location]];
+
+   [reason appendFormat:@"in line %ld \"%.*s\"",
+                        lineno,
+                        (int) (line_end - line_start), line_start];
+
+   return( [NSError errorWithDomain:MulleObjCJSMNErrorDomain
+                               code:-1
+                           userInfo:@{ NSLocalizedFailureReasonErrorKey : reason}]);
+}
+
+
+- (NSError *) errorWithName:(NSString *) name
+                       data:(NSData *) data
+                      range:(NSRange) range
+{
+   return( [self errorWithName:name
+                         bytes:[data bytes]
+                        length:[data length]
+                         range:range]);
+}
+
+
 - (id) parseBytes:(void *) bytes
            length:(NSUInteger) length
 {
@@ -273,8 +354,7 @@ static struct process_result  *process_tokens( struct process_context *p,
    struct process_result    space;
    struct process_result    *result;
    struct process_context   ctxt;
-
-   plist = nil;
+   NSError                  *error;
 
   /* Allocate some tokens as a start */
 again:
@@ -290,18 +370,39 @@ again:
                                               sizeof( jsmntok_t) * _tokcount);
          goto again;
       }
+
       if( rval == JSMN_ERROR_PART)
          _incomplete = YES;
+      return( nil);
+   }
+
+   ctxt.js       = bytes;
+   ctxt.sentinel = &((char *) bytes)[ length];
+   ctxt.null     = [NSNull null];
+   ctxt.problem  = 0;
+   if( _trueFalseAsStrings)
+   {
+      ctxt.yes  = @"true";
+      ctxt.no   = @"false";
    }
    else
    {
-      ctxt.js = bytes;
-      result  = process_tokens( &ctxt, _tok, rval);
-      if( result)
-         plist = [result->obj autorelease];
+      ctxt.yes  = @(YES);  // can be tricky to output as true/false again
+      ctxt.no   = @(NO);
    }
 
-   return( plist);
+   result = process_tokens( &ctxt, _tok, rval);
+   if( ! result)
+   {
+      error = [self errorWithName:@"syntax"
+                            bytes:bytes
+                           length:length
+                            range:NSMakeRange( ctxt.problem->start,
+                                               ctxt.problem->start- ctxt.problem->end)];
+      [NSError mulleSetCurrentError:error];
+      return( nil);
+   }
+   return( [result->obj autorelease]);
 }
 
 
