@@ -24,6 +24,6 @@ int main( void)
       return 1;
    }
    for( i = 0; i < r; i++)
-      printf( "%.*s (%d)\n", t[ i].end - t[ i].start, &json[ t[ i].start], t[i].type);
+      printf( "%d: %.*s (%d)\n", i, t[ i].end - t[ i].start, &json[ t[ i].start], t[i].type);
    return( 0);
 }

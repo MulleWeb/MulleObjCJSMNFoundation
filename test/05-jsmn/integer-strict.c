@@ -17,9 +17,9 @@ int main( void)
    r = jsmn_parse(&p, json, strlen( json), t, 128);
    if( r < 0)
    {
-      fprintf( stderr, "Failed to parse JSON: %d\n", r);
-      return 1;
+      printf( "Failed to parse JSON: %d\n", r);
+      return( 0);
    }
    printf( "%.*s\n", t[ 0].end - t[ 0].start, &json[ t[ 0].start]);
-   return( 0);
+   return( 1);
 }

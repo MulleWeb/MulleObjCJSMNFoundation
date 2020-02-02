@@ -26,13 +26,15 @@ int   main( int argc, const char * argv[])
    NSError      *error;
    id           plist;
    NSUInteger   format;
+   NSPropertyListFormat   plistFormat;
 
    error = nil;
    data  = [NSData dataWithBytes:test_json
                           length:sizeof( test_json)];
+   plistFormat = MullePropertyListLooseOpenStepFormat;
    plist = [NSPropertyListSerialization propertyListWithData:data
                                                      options:0
-                                                      format:NULL
+                                                      format:&plistFormat
                                                        error:&error];
    if( ! plist)
    {

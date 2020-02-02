@@ -27,6 +27,7 @@
 + (void) load
 {
    [self mulleAddParserClass:[MulleObjCJSMNParser class]
+                      method:@selector( parseData:)
        forPropertyListFormat:MullePropertyListJSONFormat];
 }
 

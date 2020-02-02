@@ -22,17 +22,19 @@ static char   test_json[] = "-18.48e+10";
 
 int   main( int argc, const char * argv[])
 {
-   NSData       *data;
-   NSError      *error;
-   id           plist;
-   NSUInteger   format;
+   NSData                 *data;
+   NSError                *error;
+   id                     plist;
+   NSUInteger             format;
+   NSPropertyListFormat   plistFormat;
 
    error = nil;
    data  = [NSData dataWithBytes:test_json
                           length:sizeof( test_json)];
+   plistFormat = MullePropertyListLooseOpenStepFormat;
    plist = [NSPropertyListSerialization propertyListWithData:data
                                                      options:0
-                                                      format:NULL
+                                                      format:&plistFormat
                                                        error:&error];
    if( ! plist)
    {

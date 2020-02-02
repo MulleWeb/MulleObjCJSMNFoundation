@@ -405,14 +405,6 @@ again:
    return( [result->obj autorelease]);
 }
 
-
-- (id) mulleParsePropertyListData:(NSData *) data
-                 mutabilityOption:(NSPropertyListMutabilityOptions) opt
-{
-   // options are ignored, as everything is mutable anyway
-   return( [self parseData:data]);
-}
-
 @end
 
 
