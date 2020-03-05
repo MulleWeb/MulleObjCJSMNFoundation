@@ -30,15 +30,18 @@
 @property( getter=isIncomplete) BOOL  incomplete;
 @property BOOL  trueFalseAsStrings;
 
-// will be cleared on reset
-@property( retain) id           userInfo;
+// userInfo and object properties will be cleared on -reset
+@property( retain) id   userInfo;
+@property( retain) id   object;
 
 //
 // you can call this incrementally.. if you get
 // nil back, check for -isIncomplete, if yes you can *append* stuff to
 // the NSData and try again. The already parsed part of the NSData will
 // not be parsed again.
-//
+// Otherwise you get the parsed object back. It will also be available
+// via -object until the next parseData completes.
+
 - (id) parseData:(NSData *) data;
 
 //

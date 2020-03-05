@@ -256,6 +256,7 @@ static struct process_result  *process_tokens( struct process_context *p,
 - (void) reset
 {
    [self setUserInfo:nil];
+   [self setObject:nil];
 
    jsmn_init( _parser);
 
@@ -271,13 +272,6 @@ static struct process_result  *process_tokens( struct process_context *p,
 {
    mulle_allocator_free( MulleObjCObjectGetAllocator( self), _tok);
    [super dealloc];
-}
-
-
-- (id) parseData:(NSData *) data
-{
-   return( [self parseBytes:[data bytes]
-                     length:[data length]]);
 }
 
 
@@ -402,7 +396,18 @@ again:
       [NSError mulleSetCurrentError:error];
       return( nil);
    }
+   [self setObject:result->obj];
+
    return( [result->obj autorelease]);
+}
+
+
+
+
+- (id) parseData:(NSData *) data
+{
+   return( [self parseBytes:[data bytes]
+                     length:[data length]]);
 }
 
 @end
