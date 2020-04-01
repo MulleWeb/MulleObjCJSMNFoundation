@@ -6,9 +6,9 @@ if( MULLE_TRACE_INCLUDE)
 endif()
 
 set( SOURCES
+src/MulleJSMNParser.m
 src/MulleObjCJSMNFoundation.m
 src/MulleObjCJSMNFoundation-shlib.m
-src/MulleObjCJSMNParser.m
 src/NSPropertyListSerialization+JSMN.m
 )
 

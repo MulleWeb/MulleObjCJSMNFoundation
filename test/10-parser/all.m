@@ -29,10 +29,10 @@ static char   test_json[] = "[\n"
 
 int   main( int argc, const char * argv[])
 {
-   MulleObjCJSMNParser   *parser;
+   MulleJSMNParser   *parser;
    id                    plist;
 
-   parser = [[MulleObjCJSMNParser new] autorelease];
+   parser = [[MulleJSMNParser new] autorelease];
    plist  = [parser parseBytes:test_json
                         length:strlen( test_json)];
    if( ! plist)

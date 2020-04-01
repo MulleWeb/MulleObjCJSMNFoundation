@@ -11,7 +11,7 @@
  *  $Id$
  *
  */
-#import "MulleObjCJSMNParser.h"
+#import "MulleJSMNParser.h"
 
 
 #import "import-private.h"
@@ -35,10 +35,10 @@
 #include "jsmn.h"
 
 
-NSString  *MulleObjCJSMNErrorDomain = @"MulleObjCJSMNError";
+NSString  *MulleJSMNErrorDomain = @"MulleJSMNError";
 
 
-@implementation MulleObjCJSMNParser
+@implementation MulleJSMNParser
 
 struct process_result
 {
@@ -261,7 +261,7 @@ static struct process_result  *process_tokens( struct process_context *p,
    jsmn_init( _parser);
 
    _tokcount   = 512;
-   _tok        = mulle_allocator_realloc( MulleObjCObjectGetAllocator( self),
+   _tok        = mulle_allocator_realloc( MulleObjCInstanceGetAllocator( self),
                                           _tok,
                                           sizeof( jsmntok_t) * _tokcount);
    _incomplete = NO;
@@ -270,7 +270,7 @@ static struct process_result  *process_tokens( struct process_context *p,
 
 - (void) dealloc
 {
-   mulle_allocator_free( MulleObjCObjectGetAllocator( self), _tok);
+   mulle_allocator_free( MulleObjCInstanceGetAllocator( self), _tok);
    [super dealloc];
 }
 
@@ -323,7 +323,7 @@ static struct process_result  *process_tokens( struct process_context *p,
                         lineno,
                         (int) (line_end - line_start), line_start];
 
-   return( [NSError errorWithDomain:MulleObjCJSMNErrorDomain
+   return( [NSError errorWithDomain:MulleJSMNErrorDomain
                                code:-1
                            userInfo:@{ NSLocalizedFailureReasonErrorKey : reason}]);
 }
@@ -359,7 +359,7 @@ again:
       {
          assert( _tokcount);
          _tokcount = _tokcount * 2;
-         _tok      = mulle_allocator_realloc( MulleObjCObjectGetAllocator( self),
+         _tok      = mulle_allocator_realloc( MulleObjCInstanceGetAllocator( self),
                                               _tok,
                                               sizeof( jsmntok_t) * _tokcount);
          goto again;
@@ -408,6 +408,24 @@ again:
 {
    return( [self parseBytes:[data bytes]
                      length:[data length]]);
+}
+
+@end
+
+
+
+@implementation NSString( MulleJSMNParser)
+
+- (id) mulleJSON
+{
+   MulleJSMNParser   *parser;
+   NSData                *data;
+   id                    obj;
+
+   data   = [self dataUsingEncoding:NSUTF8StringEncoding];
+   parser = [MulleJSMNParser object];
+   obj    = [parser parseData:data];
+   return( obj);
 }
 
 @end

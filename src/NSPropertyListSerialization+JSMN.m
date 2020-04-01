@@ -14,7 +14,7 @@
 #import "import-private.h"
 
 // other files in this library
-#import "MulleObjCJSMNParser.h"
+#import "MulleJSMNParser.h"
 
 // other libraries of MulleObjCStandardFoundation
 
@@ -26,7 +26,7 @@
 // the detection happens in main standard foundation already
 + (void) load
 {
-   [self mulleAddParserClass:[MulleObjCJSMNParser class]
+   [self mulleAddParserClass:[MulleJSMNParser class]
                       method:@selector( parseData:)
        forPropertyListFormat:MullePropertyListJSONFormat];
 }

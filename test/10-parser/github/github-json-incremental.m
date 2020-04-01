@@ -13,7 +13,7 @@ int   main( int argc, const char * argv[])
 {
    id                    plist;
    int                   c;
-   MulleObjCJSMNParser   *parser;
+   MulleJSMNParser   *parser;
    struct mulle_buffer   buffer;
    int                   i;
    int                   count;
@@ -21,7 +21,7 @@ int   main( int argc, const char * argv[])
 // don't have that yet :( it's on OS
 //   data = [[NSFileHandle fileHandleWithStandardInput] readDataToEndOfFile];
 
-   parser = [MulleObjCJSMNParser object];
+   parser = [MulleJSMNParser object];
 
    i = 0;
    count = 0;

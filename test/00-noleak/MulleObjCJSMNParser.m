@@ -11,7 +11,7 @@ int main( void)
       _exit( 1);
 #endif
 
-   [[MulleObjCJSMNParser new] autorelease];
+   [[MulleJSMNParser new] autorelease];
    return( 0);
 }
 

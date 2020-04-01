@@ -10,7 +10,7 @@
  *
  *  version:  major, minor, patch
  */
-#define MULLE_OBJC_JSMN_FOUNDATION_VERSION  ((0 << 20) | (16 << 8) | 0)
+#define MULLE_OBJC_JSMN_FOUNDATION_VERSION  ((0 << 20) | (17 << 8) | 0)
 
 
 static inline unsigned int   MulleObjCJSMNFoundation_get_version_major( void)
@@ -40,7 +40,7 @@ extern uint32_t   MulleObjCJSMNFoundation_get_version( void);
    # include "foo.h"
 */
 
-#import "MulleObjCJSMNParser.h"
+#import "MulleJSMNParser.h"
 
 #import "MulleObjCLoader+MulleObjCJSMNFoundation.h"
 

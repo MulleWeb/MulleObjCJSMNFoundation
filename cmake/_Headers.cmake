@@ -14,8 +14,8 @@ src/import-private.h
 )
 
 set( PUBLIC_HEADERS
+src/MulleJSMNParser.h
 src/MulleObjCJSMNFoundation.h
-src/MulleObjCJSMNParser.h
 src/MulleObjCLoader+MulleObjCJSMNFoundation.h
 src/import.h
 src/jsmn.h

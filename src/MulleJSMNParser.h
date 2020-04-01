@@ -17,7 +17,7 @@
 //
 // Parser base on JSMN, this can do incremental parsing
 //
-@interface MulleObjCJSMNParser : NSObject
+@interface MulleJSMNParser : NSObject
 {
    void      *_parser;
    void      *_tok;
@@ -55,7 +55,6 @@
 
 - (void) reset;
 
-
 // internal error report generator
 - (NSError *) errorWithName:(NSString *) name
                        data:(NSData *) data
@@ -66,4 +65,13 @@
                      length:(NSUInteger) length
                       range:(NSRange) range;
 @end
+
+
+@interface NSString( MulleJSMNParser)
+
+- (id) mulleJSON;
+
+@end
+
+
 

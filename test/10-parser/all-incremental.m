@@ -29,12 +29,12 @@ static char   test_json[] = "[\n"
 
 int   main( int argc, const char * argv[])
 {
-   MulleObjCJSMNParser   *parser;
+   MulleJSMNParser   *parser;
    id                    plist;
    NSUInteger            i;
    NSUInteger            length;
 
-   parser = [[MulleObjCJSMNParser new] autorelease];
+   parser = [[MulleJSMNParser new] autorelease];
    length = strlen( test_json);
    for( i = 1; i < length; i++)
    {
