@@ -275,6 +275,80 @@ static struct process_result  *process_tokens( struct process_context *p,
 }
 
 
+- (id) parseBytes:(void *) bytes
+           length:(NSUInteger) length
+{
+   id                       plist;
+   int                      rval;
+   struct process_result    space;
+   struct process_result    *result;
+   struct process_context   ctxt;
+   NSError                  *error;
+
+  /* Allocate some tokens as a start */
+again:
+   rval = jsmn_parse( _parser, bytes, length, _tok, _tokcount);
+   if( rval < 0)
+   {
+      if( rval == JSMN_ERROR_NOMEM)
+      {
+         assert( _tokcount);
+         _tokcount = _tokcount * 2;
+         _tok      = mulle_allocator_realloc( MulleObjCInstanceGetAllocator( self),
+                                              _tok,
+                                              sizeof( jsmntok_t) * _tokcount);
+         goto again;
+      }
+
+      if( rval == JSMN_ERROR_PART)
+         _incomplete = YES;
+      // not a true error
+      return( nil);
+   }
+
+   ctxt.js       = bytes;
+   ctxt.sentinel = &((char *) bytes)[ length];
+   ctxt.null     = [NSNull null];
+   ctxt.problem  = 0;
+   if( _trueFalseAsStrings)
+   {
+      ctxt.yes  = @"true";
+      ctxt.no   = @"false";
+   }
+   else
+   {
+      ctxt.yes  = @(YES);  // can be tricky to output as true/false again
+      ctxt.no   = @(NO);
+   }
+
+   result = process_tokens( &ctxt, _tok, rval);
+   if( ! result)
+   {
+      error = [self errorWithName:@"syntax"
+                            bytes:bytes
+                           length:length
+                            range:NSMakeRange( ctxt.problem->start,
+                                               ctxt.problem->start- ctxt.problem->end)];
+      [NSError mulleSetError:error];
+      return( nil);
+   }
+
+   NSParameterAssert( result->obj);
+   _object = result->obj;
+
+   return( _object);
+}
+
+
+
+- (id) parseData:(NSData *) data
+{
+   return( [self parseBytes:[data bytes]
+                     length:[data length]]);
+}
+
+
+
 - (NSError *) errorWithName:(NSString *) name
                       bytes:(void *) bytes
                      length:(NSUInteger) length
@@ -326,88 +400,6 @@ static struct process_result  *process_tokens( struct process_context *p,
    return( [NSError errorWithDomain:MulleJSMNErrorDomain
                                code:-1
                            userInfo:@{ NSLocalizedFailureReasonErrorKey : reason}]);
-}
-
-
-- (NSError *) errorWithName:(NSString *) name
-                       data:(NSData *) data
-                      range:(NSRange) range
-{
-   return( [self errorWithName:name
-                         bytes:[data bytes]
-                        length:[data length]
-                         range:range]);
-}
-
-
-- (id) parseBytes:(void *) bytes
-           length:(NSUInteger) length
-{
-   id                       plist;
-   int                      rval;
-   struct process_result    space;
-   struct process_result    *result;
-   struct process_context   ctxt;
-   NSError                  *error;
-
-  /* Allocate some tokens as a start */
-again:
-   rval = jsmn_parse( _parser, bytes, length, _tok, _tokcount);
-   if( rval < 0)
-   {
-      if( rval == JSMN_ERROR_NOMEM)
-      {
-         assert( _tokcount);
-         _tokcount = _tokcount * 2;
-         _tok      = mulle_allocator_realloc( MulleObjCInstanceGetAllocator( self),
-                                              _tok,
-                                              sizeof( jsmntok_t) * _tokcount);
-         goto again;
-      }
-
-      if( rval == JSMN_ERROR_PART)
-         _incomplete = YES;
-      return( nil);
-   }
-
-   ctxt.js       = bytes;
-   ctxt.sentinel = &((char *) bytes)[ length];
-   ctxt.null     = [NSNull null];
-   ctxt.problem  = 0;
-   if( _trueFalseAsStrings)
-   {
-      ctxt.yes  = @"true";
-      ctxt.no   = @"false";
-   }
-   else
-   {
-      ctxt.yes  = @(YES);  // can be tricky to output as true/false again
-      ctxt.no   = @(NO);
-   }
-
-   result = process_tokens( &ctxt, _tok, rval);
-   if( ! result)
-   {
-      error = [self errorWithName:@"syntax"
-                            bytes:bytes
-                           length:length
-                            range:NSMakeRange( ctxt.problem->start,
-                                               ctxt.problem->start- ctxt.problem->end)];
-      [NSError mulleSetCurrentError:error];
-      return( nil);
-   }
-   [self setObject:result->obj];
-
-   return( [result->obj autorelease]);
-}
-
-
-
-
-- (id) parseData:(NSData *) data
-{
-   return( [self parseBytes:[data bytes]
-                     length:[data length]]);
 }
 
 @end

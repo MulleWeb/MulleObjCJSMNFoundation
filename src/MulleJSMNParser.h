@@ -57,10 +57,6 @@
 
 // internal error report generator
 - (NSError *) errorWithName:(NSString *) name
-                       data:(NSData *) data
-                      range:(NSRange) range;
-
-- (NSError *) errorWithName:(NSString *) name
                       bytes:(void *) bytes
                      length:(NSUInteger) length
                       range:(NSRange) range;
