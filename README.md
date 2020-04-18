@@ -1,9 +1,8 @@
 # MulleObjCJSMNFoundation
 
-#### 🌼 JSON support for the MulleFoundation based on the jsmn parser
+#### 🌼 JSON support for mulle-objc
 
-
-JSON parsing, bases on the [jsmn](//github.com/zserge/jsmn) parser.
+JSON parsing, based on the [jsmn](//github.com/zserge/jsmn) parser.
 
 
 Build Status | Release Version
@@ -11,23 +10,37 @@ Build Status | Release Version
 [![Build Status](https://travis-ci.org/MulleWeb/MulleObjCJSMNFoundation.svg?branch=release)](https://travis-ci.org/MulleWeb/MulleObjCJSMNFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleWeb/MulleObjCJSMNFoundation.svg) [![Build Status](https://travis-ci.org/MulleWeb/MulleObjCJSMNFoundation.svg?branch=release)](https://travis-ci.org/MulleWeb/MulleObjCJSMNFoundation)
 
 
-## Build
+## About
 
-This is a [mulle-sde](https://mulle-sde.github.io/) project.
+The library provides a class **MulleJSMNParser** and adds support for JSON
+deserialization to the **NSPropertyListSerialization**.
 
-It has it's own virtual environment, that will be automatically setup for you
-once you enter it with:
 
-```
-mulle-sde MulleObjCJSMNFoundation
-```
+## Add
 
-Now you can let **mulle-sde** fetch the required dependencies and build the
-project for you:
+Use [mulle-sde](//github.com/mulle-sde) to add MulleObjCJSMNFoundation to your project:
 
 ```
-mulle-sde craft
+mulle-sde dependency add --c --github MulleWeb MulleObjCJSMNFoundation
 ```
+
+## Install
+
+**MulleObjCJSMNFoundation** is part of **Foundation**, see
+[foundation-developer](//github.com//foundation-developer) for
+installation instructions.
+
+
+### Manual install
+
+Use [mulle-sde](//github.com/mulle-sde) to build and install MulleObjCJSMNFoundation
+and all its dependencies:
+
+```
+mulle-sde install --objc --prefix /usr/local \
+   https://github.com/MulleWeb/MulleObjCJSMNFoundation/archive/latest.tar.gz
+```
+
 
 ## Acknowledgements
 
@@ -54,3 +67,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
+
+
+## Author
+
+[Nat!](//www.mulle-kybernetik.com/weblog) for
+[Mulle kybernetiK](//www.mulle-kybernetik.com) and
+[Codeon GmbH](//www.codeon.de)
