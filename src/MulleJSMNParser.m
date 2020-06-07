@@ -31,7 +31,8 @@
 // strict parsing doesn't buy me a lot, we fix it later as the
 // parser is too simple
 //#define JSMN_STRICT
-#define JSMN_STATIC     // don't expose JSMN functions
+#define JSMN_STATIC         // don't expose JSMN functions
+#define JSMN_PARENT_LINKS   // otherwise large JSMN don't parse in finite time
 #include "jsmn.h"
 
 
@@ -73,9 +74,25 @@ struct process_context
    id                     no;
    NSNull                 *null;
    jsmntok_t              *problem;
+
+//
+// Objective-C stuff:
+//
+// this works since NSString alloc and NSNumber as classclusters return
+// a placeholder, where the actual new method is executed upon. The
+// placeholder will not be released
+//
+   id                     stringFactory;
+   IMP                    newString;
+
+   id                     numberFactory;
+   IMP                    newLongLongNumber;
+   IMP                    newUnsignedLongLongNumber;
+   IMP                    newDoubleNumber;
 };
 
 
+MULLE_C_NEVER_INLINE
 static struct process_result  *process_tokens( struct process_context *p,
                                                jsmntok_t *t,
                                                size_t count)
@@ -145,13 +162,19 @@ static struct process_result  *process_tokens( struct process_context *p,
          {
             if( rval == mulle_utf_is_too_large_for_signed)
             {
-               obj = [[NSNumber alloc] initWithUnsignedLongLong:(unsigned long long) nr];
+               obj = MulleObjCIMPCallWithUnsignedLongLong( p->newUnsignedLongLongNumber,
+                                                           p->numberFactory,
+                                                           @selector( initWithUnsignedLongLong:),
+                                                           (unsigned long long) nr);
                return( process_result_simple( obj, &p->space));
             }
 
             assert( rval == mulle_utf_is_valid);
             {
-               obj = [[NSNumber alloc] initWithLongLong:nr];
+               obj = MulleObjCIMPCallWithLongLong( p->newLongLongNumber,
+                                                   p->numberFactory,
+                                                   @selector( initWithLongLong:),
+                                                   (long long) nr);
                return( process_result_simple( obj, &p->space));
             }
          }
@@ -160,7 +183,10 @@ static struct process_result  *process_tokens( struct process_context *p,
          dvalue = strtod( start, &endptr);
          if( endptr == &start[ len])
          {
-            obj = [[NSNumber alloc] initWithDouble:dvalue];
+            obj = MulleObjCIMPCallWithDouble( p->newDoubleNumber,
+                                              p->numberFactory,
+                                              @selector( initWithDouble:),
+                                              (long long) nr);
             return( process_result_simple( obj, &p->space));
          }
       }
@@ -172,8 +198,18 @@ static struct process_result  *process_tokens( struct process_context *p,
       len   = t->end - t->start;
       start = p->js + t->start;
       s     = (mulle_utf8_t *) start;
-      obj   = [[NSString alloc] mulleInitWithUTF8Characters:s
-                                                     length:len];
+      {
+         mulle_objc_metaabi_param_block_voidptr_return( struct { mulle_utf8_t *characters;
+                                                                 NSUInteger length;})
+                                                        param;
+
+         param.p.characters = s;
+         param.p.length     = len;
+
+         obj = (id) (*p->newString)( p->stringFactory,
+                                     (mulle_objc_methodid_t) @selector( mulleInitWithUTF8Characters:length:),
+                                     &param);
+      }
       return( process_result_simple( obj, &p->space));
 
    case JSMN_OBJECT :
@@ -320,6 +356,17 @@ again:
       ctxt.yes  = @(YES);  // can be tricky to output as true/false again
       ctxt.no   = @(NO);
    }
+
+
+   assert( [NSNumber mulleContainsProtocol:@protocol( MulleObjCClassCluster)]);
+   ctxt.numberFactory             = [NSNumber alloc];
+   ctxt.newLongLongNumber         = [ctxt.numberFactory methodForSelector:@selector( initWithLongLong:)];
+   ctxt.newUnsignedLongLongNumber = [ctxt.numberFactory methodForSelector:@selector( initWithUnsignedLongLong:)];
+   ctxt.newDoubleNumber           = [ctxt.numberFactory methodForSelector:@selector( initWithDouble:)];
+
+   assert( [NSString mulleContainsProtocol:@protocol( MulleObjCClassCluster)]);
+   ctxt.stringFactory             = [NSString alloc];
+   ctxt.newString                 = [ctxt.stringFactory methodForSelector:@selector( mulleInitWithUTF8Characters:length:)];
 
    result = process_tokens( &ctxt, _tok, rval);
    if( ! result)
