@@ -199,9 +199,8 @@ static struct process_result  *process_tokens( struct process_context *p,
       start = p->js + t->start;
       s     = (mulle_utf8_t *) start;
       {
-         mulle_objc_metaabi_param_block_voidptr_return( struct { mulle_utf8_t *characters;
-                                                                 NSUInteger length;})
-                                                        param;
+         mulle_metaabi_struct_voidptr_return( struct { mulle_utf8_t *characters;
+                                                        NSUInteger length;}) param;
 
          param.p.characters = s;
          param.p.length     = len;
@@ -280,7 +279,7 @@ static struct process_result  *process_tokens( struct process_context *p,
 - (id) init
 {
    assert( sizeof( jsmn_parser) <= sizeof( self->_space));
-   assert( alignof( jsmn_parser) <= alignof( self->_space));
+   assert( alignof( jsmn_parser) <= alignof( void *[4]));
 
    _parser = _space;
    [self reset];
