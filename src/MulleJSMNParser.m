@@ -186,7 +186,7 @@ static struct process_result  *process_tokens( struct process_context *p,
             obj = MulleObjCIMPCallWithDouble( p->newDoubleNumber,
                                               p->numberFactory,
                                               @selector( initWithDouble:),
-                                              (long long) nr);
+                                              dvalue);
             return( process_result_simple( obj, &p->space));
          }
       }
