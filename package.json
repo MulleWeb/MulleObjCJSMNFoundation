@@ -1,0 +1,17 @@
+{
+   "name" : "MulleObjCJSMNFoundation",
+   "version" : "0.18.0",
+   "description" : "🌼 JSON support for mulle-objc",
+   "homepage" : "https://github.com/MulleWeb/MulleObjCJSMNFoundation",
+   "bugs" : "https://github.com/MulleWeb/MulleObjCJSMNFoundation/issues",
+   "keywords" : [],
+   "license" : "UNLICENSED",
+   "repository" : {
+      "type" : "git",
+      "url" : "MulleWeb/MulleObjCJSMNFoundation"
+   },
+   "dependencies" : {
+      "src/jsmn.h" : "https://raw.githubusercontent.com/mulle-nat/jsmn/master/jsmn.h",
+      "MulleObjCStandardFoundation" : "MulleFoundation/MulleObjCStandardFoundation"
+   }
+}
