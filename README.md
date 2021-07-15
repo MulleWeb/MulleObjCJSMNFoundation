@@ -4,16 +4,27 @@
 
 JSON parsing, based on the [jsmn](//github.com/zserge/jsmn) parser.
 
-
-Build Status | Release Version
--------------|-----------------------------------
-[![Build Status](https://travis-ci.org/MulleWeb/MulleObjCJSMNFoundation.svg?branch=release)](https://travis-ci.org/MulleWeb/MulleObjCJSMNFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleWeb/MulleObjCJSMNFoundation.svg) [![Build Status](https://travis-ci.org/MulleWeb/MulleObjCJSMNFoundation.svg?branch=release)](https://travis-ci.org/MulleWeb/MulleObjCJSMNFoundation)
+Adds JSON capability for property lists via categories to **NSPropertyListSerialization**.
 
 
-## About
+### You are here
 
-The library provides a class **MulleJSMNParser** and adds support for JSON
-deserialization to the **NSPropertyListSerialization**.
+```
+   .-------------------------------------------------------------------.
+   | Foundation                                                        |
+   '-------------------------------------------------------------------'
+   .---------..--------..------------------------..---------..=========.
+   | HTTP    || InetOS || MulleFoundation        || Expat   || JSMN    |
+   '---------''--------''------------------------''---------''========='
+   .-------------..---------------------..-----------------------------.
+   | Inet        || OS                  || Plist                       |
+   '-------------''---------------------''-----------------------------'
+   .---------..--------------------------------------------------------.
+   | Lock    || Standard                                               |
+   '---------''--------------------------------------------------------'
+```
+
+
 
 
 ## Add

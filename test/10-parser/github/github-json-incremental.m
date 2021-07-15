@@ -13,7 +13,7 @@ int   main( int argc, const char * argv[])
 {
    id                    plist;
    int                   c;
-   MulleJSMNParser   *parser;
+   MulleJSMNParser       *parser;
    struct mulle_buffer   buffer;
    int                   i;
    int                   count;
@@ -22,9 +22,10 @@ int   main( int argc, const char * argv[])
 //   data = [[NSFileHandle fileHandleWithStandardInput] readDataToEndOfFile];
 
    parser = [MulleJSMNParser object];
+   plist  = nil;
+   i      = 0;
+   count  = 0;
 
-   i = 0;
-   count = 0;
    mulle_buffer_init( &buffer, NULL);
    while( (c = getchar()) != EOF)
    {

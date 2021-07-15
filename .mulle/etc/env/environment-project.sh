@@ -7,19 +7,19 @@ export PROJECT_NAME="MulleObjCJSMNFoundation"
 #
 #
 #
-export PROJECT_IDENTIFIER="MulleObjCJSMNFoundation"
 
-
-#
-#
-#
-export PROJECT_DOWNCASE_IDENTIFIER="mulle_objc_jsmn_foundation"
 
 
 #
 #
 #
-export PROJECT_UPCASE_IDENTIFIER="MULLE_OBJC_JSMN_FOUNDATION"
+
+
+
+#
+#
+#
+
 
 
 #
