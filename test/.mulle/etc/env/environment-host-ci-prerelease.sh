@@ -1,35 +1,17 @@
 #
-#
-#
-export MULLE_DATA_NODETYPE="git"
-
-
-#
-#
-#
-export MULLE_DATA_URL="https://github.com/mulle-c/mulle-data.git"
-
-
-#
-#
-#
-export MULLE_DATA_BRANCH="prerelease"
-
-
-#
 # mulle-testallocator nodetype: ${MULLE_TESTALLOCATOR_NODETYPE:-tar}
 #
 export MULLE_TESTALLOCATOR_NODETYPE="git"
 
 
 #
-# mulle-testallocator url: ${MULLE_TESTALLOCATOR_URL:-https://github.com/mulle-core/mulle-testallocator/archive/${MULLE_BRANCH}.tar.gz}
+# mulle-testallocator url: ${MULLE_TESTALLOCATOR_URL:-https://github.com/mulle-core/mulle-testallocator/archive/${MULLE_TAG}.tar.gz}
 #
 export MULLE_TESTALLOCATOR_URL="https://github.com/mulle-core/mulle-testallocator.git"
 
 
 #
-# mulle-testallocator branch: ${MULLE_TESTALLOCATOR_BRANCH:-latest}
+# mulle-testallocator branch: ${MULLE_TESTALLOCATOR_BRANCH}
 #
 export MULLE_TESTALLOCATOR_BRANCH="prerelease"
 
@@ -167,15 +149,33 @@ export MULLE_OBJC_JSMN_FOUNDATION_NODETYPE="git"
 
 
 #
-# MulleObjCJSMNFoundation url: ${MULLE_OBJC_JSMN_FOUNDATION_URL:-https://github.com/MulleFoundation/MulleObjCJSMNFoundation/archive/${MULLE_BRANCH}.tar.gz}
+# MulleObjCJSMNFoundation url: ${MULLE_OBJC_JSMN_FOUNDATION_URL:-https://github.com/MulleWeb/MulleObjCJSMNFoundation/archive/${MULLE_TAG}.tar.gz}
 #
-export MULLE_OBJC_JSMN_FOUNDATION_URL="https://github.com/MulleFoundation/MulleObjCJSMNFoundation.git"
+export MULLE_OBJC_JSMN_FOUNDATION_URL="https://github.com/MulleWeb/MulleObjCJSMNFoundation.git"
 
 
 #
-# MulleObjCJSMNFoundation branch: ${MULLE_OBJC_JSMN_FOUNDATION_BRANCH:-latest}
+# MulleObjCJSMNFoundation branch: ${MULLE_OBJC_JSMN_FOUNDATION_BRANCH}
 #
 export MULLE_OBJC_JSMN_FOUNDATION_BRANCH="prerelease"
+
+
+#
+# MulleObjCPlistFoundation nodetype: ${MULLE_OBJC_PLIST_FOUNDATION_NODETYPE:-tar}
+#
+export MULLE_OBJC_PLIST_FOUNDATION_NODETYPE="git"
+
+
+#
+# MulleObjCPlistFoundation url: ${MULLE_OBJC_PLIST_FOUNDATION_URL:-https://github.com/MulleFoundation/MulleObjCPlistFoundation/archive/${MULLE_TAG}.tar.gz}
+#
+export MULLE_OBJC_PLIST_FOUNDATION_URL="https://github.com/MulleFoundation/MulleObjCPlistFoundation.git"
+
+
+#
+# MulleObjCPlistFoundation branch: ${MULLE_OBJC_PLIST_FOUNDATION_BRANCH}
+#
+export MULLE_OBJC_PLIST_FOUNDATION_BRANCH="prerelease"
 
 
 #
@@ -305,6 +305,24 @@ export MULLE_VARARG_BRANCH="prerelease"
 
 
 #
+# mulle-data nodetype: ${MULLE_DATA_NODETYPE:-tar}
+#
+export MULLE_DATA_NODETYPE="git"
+
+
+#
+# mulle-data url: ${MULLE_DATA_URL:-https://github.com/mulle-c/mulle-data/archive/${MULLE_TAG}.tar.gz}
+#
+export MULLE_DATA_URL="https://github.com/mulle-c/mulle-data.git"
+
+
+#
+# mulle-data branch: ${MULLE_DATA_BRANCH}
+#
+export MULLE_DATA_BRANCH="prerelease"
+
+
+#
 # mulle-container nodetype: ${MULLE_CONTAINER_NODETYPE:-tar}
 #
 export MULLE_CONTAINER_NODETYPE="git"
@@ -383,9 +401,9 @@ export MULLE_SPRINTF_NODETYPE="git"
 
 
 #
-# mulle-sprintf url: ${MULLE_SPRINTF_URL:-https://github.com/mulle-c/mulle-sprintf/archive/${MULLE_TAG}.tar.gz}
+# mulle-sprintf url: ${MULLE_SPRINTF_URL:-https://github.com/mulle-core/mulle-sprintf/archive/${MULLE_TAG}.tar.gz}
 #
-export MULLE_SPRINTF_URL="https://github.com/mulle-c/mulle-sprintf.git"
+export MULLE_SPRINTF_URL="https://github.com/mulle-core/mulle-sprintf.git"
 
 
 #
@@ -419,13 +437,13 @@ export MULLE_OBJC_STANDARD_FOUNDATION_STARTUP_NODETYPE="git"
 
 
 #
-# MulleObjCStandardFoundation-startup url: ${MULLE_OBJC_STANDARD_FOUNDATION_STARTUP_URL:-https://github.com/MulleFoundation/MulleObjCStandardFoundation-startup/archive/${MULLE_BRANCH}.tar.gz}
+# MulleObjCStandardFoundation-startup url: ${MULLE_OBJC_STANDARD_FOUNDATION_STARTUP_URL:-https://github.com/MulleFoundation/MulleObjCStandardFoundation-startup/archive/${MULLE_TAG}.tar.gz}
 #
 export MULLE_OBJC_STANDARD_FOUNDATION_STARTUP_URL="https://github.com/MulleFoundation/MulleObjCStandardFoundation-startup.git"
 
 
 #
-# MulleObjCStandardFoundation-startup branch: ${MULLE_OBJC_STANDARD_FOUNDATION_STARTUP_BRANCH:-latest}
+# MulleObjCStandardFoundation-startup branch: ${MULLE_OBJC_STANDARD_FOUNDATION_STARTUP_BRANCH}
 #
 export MULLE_OBJC_STANDARD_FOUNDATION_STARTUP_BRANCH="prerelease"
 
