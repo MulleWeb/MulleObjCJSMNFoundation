@@ -517,6 +517,26 @@
 			]
 		]
 	},
+	"buffers":
+	[
+		{
+			"file": "src/MulleJSMNParser.m",
+			"settings":
+			{
+				"buffer_size": 13089,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/jsmn.h",
+			"settings":
+			{
+				"buffer_size": 12192,
+				"line_ending": "Unix"
+			}
+		}
+	],
 	"build_system": "",
 	"build_system_choices":
 	[
@@ -585,6 +605,11 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Volumes/Source/srcO/MulleWeb/MulleObjCJSMNFoundation",
+		"/Volumes/Source/srcO/MulleWeb/MulleObjCJSMNFoundation/src"
+	],
 	"file_history":
 	[
 		"/home/src/srcO/MulleObjCExpatFoundation/test/examples/simple.m",
@@ -718,7 +743,7 @@
 	],
 	"find":
 	{
-		"height": 50.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -732,6 +757,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"JSMN_PARENT_LINKS",
+			"toksuper",
 			"space",
 			"process_tokens",
 			"start_elem_handler",
@@ -752,6 +779,79 @@
 		"whole_word": false,
 		"wrap": true
 	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/MulleJSMNParser.m",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13089,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Objective-C/Objective-C.sublime-syntax",
+							"tabs_extra_last_activated": 1623708132.84,
+							"tabs_extra_last_activated_sheet_index": 0,
+							"tabs_extra_spawned": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1853.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/jsmn.h",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 12192,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8355,
+								8372
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tabs_extra_last_activated": 1591520472.86,
+							"tabs_extra_last_activated_sheet_index": 1,
+							"tabs_extra_spawned": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
 	"incremental_find":
 	{
 		"height": 38.0
@@ -792,6 +892,7 @@
 		"height": 124.0
 	},
 	"pinned_build_system": "",
+	"project": "MulleObjCJSMNFoundation.sublime-project",
 	"replace":
 	{
 		"height": 92.0
@@ -1152,6 +1253,7 @@
 		],
 		"width": 584.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},
