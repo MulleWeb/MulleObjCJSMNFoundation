@@ -108,7 +108,7 @@ static struct process_result  *process_tokens( struct process_context *p,
    jsmntok_t               *key_token;
    jsmntok_t               *value_token;
    long long               nr;
-   mulle_utf8_t            *s;
+   char                    *s;
    size_t                  len;
    struct process_result   *result;
 
@@ -152,13 +152,13 @@ static struct process_result  *process_tokens( struct process_context *p,
       case '8' :
       case '9' :
       case '-' :
-         s    = (mulle_utf8_t *) start;
-         rval = _mulle_utf8_scan_longlong_decimal( &s, len, &nr);
+         s    = start;
+         rval = _mulle_utf8_scan_longlong_decimal( (mulle_utf8_t **) &s, len, &nr);
          if( rval < 0)
             return( NULL);
 
          // consumed all, than its integer
-         if( s == (mulle_utf8_t *) &start[ len])
+         if( s == &start[ len])
          {
             if( rval == mulle_utf_is_too_large_for_signed)
             {
@@ -197,10 +197,10 @@ static struct process_result  *process_tokens( struct process_context *p,
    case JSMN_STRING :
       len   = t->end - t->start;
       start = p->js + t->start;
-      s     = (mulle_utf8_t *) start;
+      s     = start;
       {
-         mulle_metaabi_struct_voidptr_return( struct { mulle_utf8_t *characters;
-                                                        NSUInteger length;}) param;
+         mulle_metaabi_struct_voidptr_return( struct { char *characters;
+                                                       NSUInteger length; }) param;
 
          param.p.characters = s;
          param.p.length     = len;

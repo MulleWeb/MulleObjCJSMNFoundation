@@ -31,7 +31,7 @@ int   main( int argc, const char * argv[])
    error = nil;
    data  = [NSData dataWithBytes:test_json
                           length:sizeof( test_json)];
-   plistFormat = MullePropertyListLooseOpenStepFormat;
+   plistFormat = MullePropertyListLooseFormat;
    plist = [NSPropertyListSerialization propertyListWithData:data
                                                      options:0
                                                       format:&plistFormat

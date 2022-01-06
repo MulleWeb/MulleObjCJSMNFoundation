@@ -55,5 +55,6 @@ src/MulleJSMNParser.h
 src/MulleObjCJSMNFoundation.h
 src/MulleObjCLoader+MulleObjCJSMNFoundation.h
 src/jsmn.h
+src/reflect/_MulleObjCJSMNFoundation-versioncheck.h
 )
 

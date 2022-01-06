@@ -37,6 +37,8 @@ static char   test_json[] =
    "}\n";
 
 
+extern BOOL   _MulleObjCJSONSortedDictionary;
+
 
 int   main( int argc, const char * argv[])
 {

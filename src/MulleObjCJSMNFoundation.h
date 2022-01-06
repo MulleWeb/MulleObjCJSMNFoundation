@@ -1,6 +1,3 @@
-#ifndef mulle_objc_jsmn_foundation_h__
-#define mulle_objc_jsmn_foundation_h__
-
 #import "import.h"
 
 #include <stdint.h>
@@ -10,7 +7,7 @@
  *
  *  version:  major, minor, patch
  */
-#define MULLE_OBJC_JSMN_FOUNDATION_VERSION  ((0 << 20) | (18 << 8) | 1)
+#define MULLE_OBJC_JSMN_FOUNDATION_VERSION  ((0 << 20) | (18 << 8) | 2)
 
 
 static inline unsigned int   MulleObjCJSMNFoundation_get_version_major( void)
@@ -44,4 +41,10 @@ extern uint32_t   MulleObjCJSMNFoundation_get_version( void);
 
 #import "MulleObjCLoader+MulleObjCJSMNFoundation.h"
 
+
+#ifdef __has_include
+# if __has_include( "_MulleObjCJSMNFoundation-versioncheck.h")
+#  include "_MulleObjCJSMNFoundation-versioncheck.h"
+# endif
 #endif
+
