@@ -1,7 +1,6 @@
-cmake_minimum_required( VERSION 3.1)
+cmake_minimum_required( VERSION 3.15)
 
 project( MulleObjCJSMNFoundation C)
-add_definitions( -DMULLE_OBJC_JSMN_FOUNDATION_EXTERN_GLOBAL=extern)
 
 
 
