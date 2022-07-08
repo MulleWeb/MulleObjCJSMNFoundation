@@ -26,7 +26,7 @@ mulle-sde dependency add --c --github MulleWeb MulleObjCJSMNFoundation
 ## Install
 
 **MulleObjCJSMNFoundation** is part of **Foundation**, see
-[foundation-developer](//github.com//foundation-developer) for
+[foundation-developer](//github.com/MulleFoundation/foundation-developer) for
 installation instructions.
 
 
