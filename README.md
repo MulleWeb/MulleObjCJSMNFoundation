@@ -19,7 +19,7 @@ Adds JSON capability for property lists via categories to **NSPropertyListSerial
 
 Use [mulle-sde](//github.com/mulle-sde) to add MulleObjCJSMNFoundation to your project:
 
-```
+``` sh
 mulle-sde dependency add --c --github MulleWeb MulleObjCJSMNFoundation
 ```
 
@@ -35,7 +35,7 @@ installation instructions.
 Use [mulle-sde](//github.com/mulle-sde) to build and install MulleObjCJSMNFoundation
 and all its dependencies:
 
-```
+``` sh
 mulle-sde install --objc --prefix /usr/local \
    https://github.com/MulleWeb/MulleObjCJSMNFoundation/archive/latest.tar.gz
 ```

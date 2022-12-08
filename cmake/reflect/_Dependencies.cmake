@@ -15,6 +15,7 @@ endif()
 # Generated from sourcetree: DAE9B674-2DEC-4CC3-8774-67CFE161AD71;MulleObjCPlistFoundation;no-singlephase;
 # Disable with : `mulle-sourcetree mark MulleObjCPlistFoundation no-link`
 # Disable for this platform: `mulle-sourcetree mark MulleObjCPlistFoundation no-cmake-platform-${MULLE_UNAME}`
+# Disable for a sdk: `mulle-sourcetree mark MulleObjCPlistFoundation no-cmake-sdk-<name>`
 #
 if( NOT MULLE_OBJC_PLIST_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_PLIST_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCPlistFoundation${CMAKE_DEBUG_POSTFIX}${CMAKE_STATIC_LIBRARY_SUFFIX} ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCPlistFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCPlistFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)

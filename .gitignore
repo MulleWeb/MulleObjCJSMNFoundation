@@ -31,3 +31,4 @@ test*/**/*.exe
 src/jsmn.h
 .mulle-make-build-dir
 version.old
+.ackrc
