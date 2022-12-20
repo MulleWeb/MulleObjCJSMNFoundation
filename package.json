@@ -8,7 +8,7 @@
    "license" : "UNLICENSED",
    "repository" : {
       "type" : "git",
-      "url" : "MulleWeb/MulleObjCJSMNFoundation"
+      "url" : "github:MulleWeb/MulleObjCJSMNFoundation"
    },
    "dependencies" : {
       "src/jsmn.h" : "https://raw.githubusercontent.com/mulle-nat/jsmn/master/jsmn.h",
