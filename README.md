@@ -2,17 +2,32 @@
 
 #### 🌼 JSON support for mulle-objc
 
+
 JSON parsing, based on the [jsmn](//github.com/zserge/jsmn) parser.
 
 Adds JSON capability for property lists via categories to **NSPropertyListSerialization**.
 
 
 
-### You are here
 
+| Release Version                                       | Release Notes
+|-------------------------------------------------------|--------------
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag//MulleObjCJSMNFoundation.svg?branch=release) [![Build Status](https://github.com//MulleObjCJSMNFoundation/workflows/CI/badge.svg?branch=release)](//github.com//MulleObjCJSMNFoundation/actions)| [RELEASENOTES](RELEASENOTES.md) |
+
+
+
+
+
+
+
+
+## Overview
 ![Overview](overview.dot.svg)
 
-
+| Requirement                                  | Description
+|----------------------------------------------|-----------------------
+| [MulleFoundationBase](https://github.com/MulleFoundation/MulleFoundationBase)             | 🛸 MulleFoundationBase does something
+| [mulle-objc-list](https://github.com/mulle-objc/mulle-objc-list)             | 📒 Lists mulle-objc runtime information contained in executables.
 
 
 ## Add
@@ -20,56 +35,43 @@ Adds JSON capability for property lists via categories to **NSPropertyListSerial
 Use [mulle-sde](//github.com/mulle-sde) to add MulleObjCJSMNFoundation to your project:
 
 ``` sh
-mulle-sde dependency add --c --github MulleWeb MulleObjCJSMNFoundation
+mulle-sde add github:MulleWeb/MulleObjCJSMNFoundation
 ```
 
 ## Install
 
-**MulleObjCJSMNFoundation** is part of **Foundation**, see
-[foundation-developer](//github.com/MulleFoundation/foundation-developer) for
-installation instructions.
+### Install with mulle-sde
 
-
-### Manual install
-
-Use [mulle-sde](//github.com/mulle-sde) to build and install MulleObjCJSMNFoundation
-and all its dependencies:
+Use [mulle-sde](//github.com/mulle-sde) to build and install MulleObjCJSMNFoundation and all dependencies:
 
 ``` sh
-mulle-sde install --objc --prefix /usr/local \
-   https://github.com/MulleWeb/MulleObjCJSMNFoundation/archive/latest.tar.gz
+mulle-sde install --prefix /usr/local \
+   https://github.com//MulleObjCJSMNFoundation/archive/latest.tar.gz
 ```
 
+### Manual Installation
 
-## Acknowledgements
+Install the [requirements](#Overview) and then install
+**MulleObjCJSMNFoundation**
+with [cmake](https://cmake.org). Here `/usr/local` is chosen as the install
+prefix:
 
-This library uses [JSMN](https://github.com/zserge/jsmn) which is MIT Licensed:
-
+``` sh
+cmake -B build \
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DCMAKE_PREFIX_PATH=/usr/local \
+      -DCMAKE_BUILD_TYPE=Release &&
+cmake --build build --config Release &&
+cmake --install build --config Release
 ```
-Copyright (c) 2010 Serge A. Zaitsev
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Platforms and Compilers
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-```
+All platforms and compilers supported by
+[mulle-c11](//github.com/mulle-c/mulle-c11).
 
 
 ## Author
 
-[Nat!](//www.mulle-kybernetik.com/weblog) for
-[Mulle kybernetiK](//www.mulle-kybernetik.com) and
-[Codeon GmbH](//www.codeon.de)
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+

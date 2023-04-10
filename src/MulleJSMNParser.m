@@ -199,7 +199,7 @@ static struct process_result  *process_tokens( struct process_context *p,
       start = p->js + t->start;
       s     = start;
       {
-         mulle_metaabi_struct_voidptr_return( struct { char *characters;
+         mulle_metaabi_union_voidptr_return( struct { char *characters;
                                                        NSUInteger length; }) param;
 
          param.p.characters = s;

@@ -1,0 +1,6 @@
+JSON parsing, based on the [jsmn](//github.com/zserge/jsmn) parser.
+
+Adds JSON capability for property lists via categories to **NSPropertyListSerialization**.
+
+
+

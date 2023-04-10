@@ -523,10 +523,54 @@
 			"file": "src/MulleJSMNParser.m",
 			"settings":
 			{
-				"buffer_size": 13089,
+				"buffer_size": 13047,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
+			},
+			"undo_stack":
+			[
+				[
+					13,
+					1,
+					"insert",
+					{
+						"characters": "ubui"
+					},
+					"BQAAAF0WAAAAAAAAXhYAAAAAAAAAAAAAXhYAAAAAAABeFgAAAAAAAAYAAABzdHJ1Y3ReFgAAAAAAAF8WAAAAAAAAAAAAAF8WAAAAAAAAYBYAAAAAAAAAAAAAYBYAAAAAAABhFgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXRYAAAAAAABjFgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					14,
+					3,
+					"left_delete",
+					null,
+					"AwAAAGAWAAAAAAAAYBYAAAAAAAABAAAAaV8WAAAAAAAAXxYAAAAAAAABAAAAdV4WAAAAAAAAXhYAAAAAAAABAAAAYg",
+					"AQAAAAAAAAABAAAAYRYAAAAAAABhFgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					15,
+					1,
+					"insert",
+					{
+						"characters": "nion"
+					},
+					"BAAAAF4WAAAAAAAAXxYAAAAAAAAAAAAAXxYAAAAAAABgFgAAAAAAAAAAAABgFgAAAAAAAGEWAAAAAAAAAAAAAGEWAAAAAAAAYhYAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXhYAAAAAAABeFgAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"contents": "Searching 143 files for \"metaabi\" (case sensitive)\n\n/home/src/srcO/MulleWeb/MulleObjCJSMNFoundation/src/MulleJSMNParser.m:\n  200        s     = start;\n  201        {\n  202:          mulle_metaabi_struct_voidptr_return( struct { char *characters;\n  203                                                         NSUInteger length; }) param;\n  204  \n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 364,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			},
+			"undo_stack":
+			[
+			]
 		},
 		{
 			"file": "src/jsmn.h",
@@ -607,8 +651,7 @@
 	},
 	"expanded_folders":
 	[
-		"/Volumes/Source/srcO/MulleWeb/MulleObjCJSMNFoundation",
-		"/Volumes/Source/srcO/MulleWeb/MulleObjCJSMNFoundation/src"
+		"/home/src/srcO/MulleWeb/MulleObjCJSMNFoundation"
 	],
 	"file_history":
 	[
@@ -750,6 +793,7 @@
 		"height": 134.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -757,6 +801,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"metaabi",
 			"JSMN_PARENT_LINKS",
 			"toksuper",
 			"space",
@@ -774,51 +819,106 @@
 			"MulleObjCJSMNParser"
 		],
 		"reverse": false,
+		"scrollbar_highlights": true,
 		"show_context": true,
 		"use_buffer2": true,
+		"use_gitignore": true,
 		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "src/MulleJSMNParser.m",
+					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13089,
+						"buffer_size": 13047,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								5802,
+								5802
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
 							"syntax": "Packages/Objective-C/Objective-C.sublime-syntax",
-							"tabs_extra_last_activated": 1623708132.84,
+							"tabs_extra_last_activated": 1675544963.31,
 							"tabs_extra_last_activated_sheet_index": 0,
 							"tabs_extra_spawned": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1853.0,
+						"translation.y": 5278.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"stack_multiselect": false,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 364,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										188,
+										195
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								209,
+								209
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/home/src/srcO/MulleWeb/MulleObjCJSMNFoundation/src",
+							"detect_indentation": false,
+							"git_gutter_is_enabled": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"tabs_extra_last_activated": 1675542654.83,
+							"tabs_extra_last_activated_sheet_index": 1,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "src/jsmn.h",
 					"semi_transient": true,
 					"settings":
@@ -846,7 +946,8 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
+					"stack_multiselect": false,
 					"type": "text"
 				}
 			]
@@ -1261,7 +1362,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 562.0,
+	"side_bar_width": 309.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
