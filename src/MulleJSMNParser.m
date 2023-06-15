@@ -103,7 +103,7 @@ static struct process_result  *process_tokens( struct process_context *p,
    id                      key;
    id                      obj;
    id                      value;
-   int                     i, j, k;
+   int                     i, j;
    int                     rval;
    jsmntok_t               *key_token;
    jsmntok_t               *value_token;
@@ -153,7 +153,7 @@ static struct process_result  *process_tokens( struct process_context *p,
       case '9' :
       case '-' :
          s    = start;
-         rval = _mulle_utf8_scan_longlong_decimal( (mulle_utf8_t **) &s, len, &nr);
+         rval = _mulle_utf8_scan_longlong_decimal( &s, len, &nr);
          if( rval < 0)
             return( NULL);
 
@@ -313,9 +313,7 @@ static struct process_result  *process_tokens( struct process_context *p,
 - (id) parseBytes:(void *) bytes
            length:(NSUInteger) length
 {
-   id                       plist;
    int                      rval;
-   struct process_result    space;
    struct process_result    *result;
    struct process_context   ctxt;
    NSError                  *error;

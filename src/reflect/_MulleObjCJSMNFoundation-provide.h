@@ -9,4 +9,11 @@
  *
  *      mulle-sde environment set MULLE_MATCH_TO_C_RUN DISABLE
  */
+#ifndef mulle_objc_jsmn_foundation_provide_h__
+#define mulle_objc_jsmn_foundation_provide_h__
+
+
 #include "jsmn.h"
+
+
+#endif

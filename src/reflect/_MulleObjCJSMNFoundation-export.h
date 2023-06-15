@@ -9,5 +9,12 @@
  *
  *      mulle-sde environment set MULLE_MATCH_TO_C_RUN DISABLE
  */
+#ifndef mulle_objc_jsmn_foundation_export_h__
+#define mulle_objc_jsmn_foundation_export_h__
+
+
 #import "MulleJSMNParser.h"
 #import "MulleObjCLoader+MulleObjCJSMNFoundation.h"
+
+
+#endif
