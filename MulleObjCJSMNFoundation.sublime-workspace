@@ -523,7 +523,7 @@
 			"file": "src/MulleJSMNParser.m",
 			"settings":
 			{
-				"buffer_size": 13047,
+				"buffer_size": 12956,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			},
@@ -537,7 +537,7 @@
 						"characters": "ubui"
 					},
 					"BQAAAF0WAAAAAAAAXhYAAAAAAAAAAAAAXhYAAAAAAABeFgAAAAAAAAYAAABzdHJ1Y3ReFgAAAAAAAF8WAAAAAAAAAAAAAF8WAAAAAAAAYBYAAAAAAAAAAAAAYBYAAAAAAABhFgAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAXRYAAAAAAABjFgAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAF0WAAAAAAAAYxYAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					14,
@@ -545,7 +545,7 @@
 					"left_delete",
 					null,
 					"AwAAAGAWAAAAAAAAYBYAAAAAAAABAAAAaV8WAAAAAAAAXxYAAAAAAAABAAAAdV4WAAAAAAAAXhYAAAAAAAABAAAAYg",
-					"AQAAAAAAAAABAAAAYRYAAAAAAABhFgAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGEWAAAAAAAAYRYAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					15,
@@ -555,7 +555,65 @@
 						"characters": "nion"
 					},
 					"BAAAAF4WAAAAAAAAXxYAAAAAAAAAAAAAXxYAAAAAAABgFgAAAAAAAAAAAABgFgAAAAAAAGEWAAAAAAAAAAAAAGEWAAAAAAAAYhYAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAXhYAAAAAAABeFgAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAF4WAAAAAAAAXhYAAAAAAAAAAAAAAADwvw"
+				]
+			]
+		},
+		{
+			"file": "src/MulleJSMNParser.h",
+			"settings":
+			{
+				"buffer_size": 1797,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAE8BAAAAAAAAUAEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAATwEAAAAAAABPAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					4,
+					1,
+					"paste",
+					null,
+					"AQAAAFABAAAAAAAAfQEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAUAEAAAAAAABQAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					7,
+					3,
+					"left_delete",
+					null,
+					"AwAAAFIBAAAAAAAAUgEAAAAAAAABAAAAIFEBAAAAAAAAUQEAAAAAAAABAAAAL1ABAAAAAAAAUAEAAAAAAAABAAAALw",
+					"AQAAAAAAAAABAAAAUwEAAAAAAABTAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					8,
+					1,
+					"insert",
+					{
+						"characters": "\n//"
+					},
+					"AwAAAFABAAAAAAAAUQEAAAAAAAAAAAAAUQEAAAAAAABSAQAAAAAAAAAAAABSAQAAAAAAAFMBAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAUAEAAAAAAABQAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					11,
+					1,
+					"insert",
+					{
+						"characters": "JSMN"
+					},
+					"BQAAAGwBAAAAAAAAbQEAAAAAAAAAAAAAbQEAAAAAAABtAQAAAAAAAAUAAABFeHBhdG0BAAAAAAAAbgEAAAAAAAAAAAAAbgEAAAAAAABvAQAAAAAAAAAAAABvAQAAAAAAAHABAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAbAEAAAAAAABxAQAAAAAAAAAAAAAAAPC/"
 				]
 			]
 		},
@@ -567,17 +625,6 @@
 				"line_ending": "Unix",
 				"name": "Find Results",
 				"scratch": true
-			},
-			"undo_stack":
-			[
-			]
-		},
-		{
-			"file": "src/jsmn.h",
-			"settings":
-			{
-				"buffer_size": 12192,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -651,7 +698,8 @@
 	},
 	"expanded_folders":
 	[
-		"/home/src/srcO/MulleWeb/MulleObjCJSMNFoundation"
+		"/home/src/srcO/MulleWeb/MulleObjCJSMNFoundation",
+		"/home/src/srcO/MulleWeb/MulleObjCJSMNFoundation/src"
 	],
 	"file_history":
 	[
@@ -834,19 +882,18 @@
 				{
 					"buffer": 0,
 					"file": "src/MulleJSMNParser.m",
-					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13047,
+						"buffer_size": 12956,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5802,
-								5802
+								0,
+								8012
 							]
 						],
 						"settings":
@@ -858,7 +905,37 @@
 							"tabs_extra_spawned": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5278.0,
+						"translation.y": 394.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/MulleJSMNParser.h",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								368,
+								368
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 726.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -866,7 +943,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"semi_transient": false,
 					"settings":
 					{
@@ -908,39 +985,6 @@
 							"tabs_extra_last_activated": 1675542654.83,
 							"tabs_extra_last_activated_sheet_index": 1,
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/jsmn.h",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 12192,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8355,
-								8372
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tabs_extra_last_activated": 1591520472.86,
-							"tabs_extra_last_activated_sheet_index": 1,
-							"tabs_extra_spawned": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

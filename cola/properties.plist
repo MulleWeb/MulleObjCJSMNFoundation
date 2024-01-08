@@ -7,7 +7,7 @@
       user="MulleWeb";
       repo="MulleObjCJSMNFoundation";
       homepage="https://github.com/MulleWeb/MulleObjCJSMNFoundation";
-      license="UNLICENSED"
+      license="BSD-3-Clause"
    };
    dependencies =
    (

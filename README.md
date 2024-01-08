@@ -2,7 +2,6 @@
 
 #### 🌼 JSON support for mulle-objc
 
-
 JSON parsing, based on the [jsmn](//github.com/zserge/jsmn) parser.
 
 Adds JSON capability for property lists via categories to **NSPropertyListSerialization**.
@@ -10,9 +9,10 @@ Adds JSON capability for property lists via categories to **NSPropertyListSerial
 
 
 
+
 | Release Version                                       | Release Notes
 |-------------------------------------------------------|--------------
-| ![Mulle kybernetiK tag](https://img.shields.io/github/tag//MulleObjCJSMNFoundation.svg?branch=release) [![Build Status](https://github.com//MulleObjCJSMNFoundation/workflows/CI/badge.svg?branch=release)](//github.com//MulleObjCJSMNFoundation/actions)| [RELEASENOTES](RELEASENOTES.md) |
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleWeb/MulleObjCJSMNFoundation.svg?branch=release) [![Build Status](https://github.com/MulleWeb/MulleObjCJSMNFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleWeb/MulleObjCJSMNFoundation/actions) | [RELEASENOTES](RELEASENOTES.md) |
 
 
 
@@ -21,13 +21,9 @@ Adds JSON capability for property lists via categories to **NSPropertyListSerial
 
 
 
-## Overview
+### You are here
+
 ![Overview](overview.dot.svg)
-
-| Requirement                                  | Description
-|----------------------------------------------|-----------------------
-| [MulleFoundationBase](https://github.com/MulleFoundation/MulleFoundationBase)             | 🛸 MulleFoundationBase does something
-| [mulle-objc-list](https://github.com/mulle-objc/mulle-objc-list)             | 📒 Lists mulle-objc runtime information contained in executables.
 
 
 ## Add
@@ -71,7 +67,7 @@ cmake --build build --config Release &&
 cmake --install build --config Release
 ```
 
-## Platforms and Compilers
+### Platforms and Compilers
 
 All platforms and compilers supported by
 [mulle-c11](//github.com/mulle-c/mulle-c11).
@@ -79,5 +75,5 @@ All platforms and compilers supported by
 
 ## Author
 
-[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK  
 

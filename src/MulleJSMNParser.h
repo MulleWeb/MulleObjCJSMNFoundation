@@ -16,7 +16,9 @@
 
 //
 // Parser base on JSMN, this can do incremental parsing
-//
+// 
+//TODO: rename to MulleObjCJSMNPlistParser
+
 @interface MulleJSMNParser : NSObject
 {
    void      *_parser;

@@ -1,0 +1,33 @@
+{
+   "name" : "MulleObjCJSMNFoundation",
+   "version" : "0.18.6",
+   "description" : "🌼 JSON support for mulle-objc",
+   "keywords" : [],
+   "license" : "BSD-3-Clause",
+   "repo" : "MulleWeb/MulleObjCJSMNFoundation",
+   "src" : [
+      "src/generic/import-private.h",
+      "src/generic/import.h",
+      "src/jsmn.h",
+      "src/MulleJSMNParser.h",
+      "src/MulleJSMNParser.m",
+      "src/MulleObjCJSMNFoundation-shlib.m",
+      "src/MulleObjCJSMNFoundation.h",
+      "src/MulleObjCJSMNFoundation.m",
+      "src/MulleObjCLoader+MulleObjCJSMNFoundation.h",
+      "src/MulleObjCLoader+MulleObjCJSMNFoundation.m",
+      "src/NSPropertyListSerialization+JSMN.m",
+      "src/reflect/objc-loader.inc",
+      "src/reflect/_MulleObjCJSMNFoundation-export.h",
+      "src/reflect/_MulleObjCJSMNFoundation-import-private.h",
+      "src/reflect/_MulleObjCJSMNFoundation-import.h",
+      "src/reflect/_MulleObjCJSMNFoundation-include-private.h",
+      "src/reflect/_MulleObjCJSMNFoundation-include.h",
+      "src/reflect/_MulleObjCJSMNFoundation-provide.h",
+      "src/reflect/_MulleObjCJSMNFoundation-versioncheck.h"
+   ],
+   "dependencies" : {
+      "MulleFoundation/MulleFoundationBase": "*",
+      "mulle-objc/mulle-objc-list": "*"
+   }
+}
