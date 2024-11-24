@@ -26,7 +26,7 @@ int   main( int argc, const char * argv[])
    i      = 0;
    count  = 0;
 
-   mulle_buffer_init( &buffer, NULL);
+   mulle_buffer_init_default( &buffer);
    while( (c = getchar()) != EOF)
    {
       mulle_buffer_add_byte( &buffer, c);

@@ -21,7 +21,7 @@ int   main( int argc, const char * argv[])
 // don't have that yet :( it's on OS
 //   data = [[NSFileHandle fileHandleWithStandardInput] readDataToEndOfFile];
 
-   mulle_buffer_init( &buffer, NULL);
+   mulle_buffer_init_default( &buffer);
    while( (c = getchar()) != EOF)
       mulle_buffer_add_byte( &buffer, c);
 
