@@ -10,9 +10,9 @@ Adds JSON capability for property lists via categories to **NSPropertyListSerial
 
 
 
-| Release Version                                       | Release Notes
-|-------------------------------------------------------|--------------
-| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleWeb/MulleObjCJSMNFoundation.svg) [![Build Status](https://github.com/MulleWeb/MulleObjCJSMNFoundation/workflows/CI/badge.svg)](//github.com/MulleWeb/MulleObjCJSMNFoundation/actions) | [RELEASENOTES](RELEASENOTES.md) |
+| Release Version                                       | Release Notes  | AI Documentation
+|-------------------------------------------------------|----------------|---------------
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleWeb/MulleObjCJSMNFoundation.svg) [![Build Status](https://github.com/MulleWeb/MulleObjCJSMNFoundation/workflows/CI/badge.svg)](//github.com/MulleWeb/MulleObjCJSMNFoundation/actions) | [RELEASENOTES](RELEASENOTES.md) | [DeepWiki for MulleObjCJSMNFoundation](https://deepwiki.com/MulleWeb/MulleObjCJSMNFoundation)
 
 
 
