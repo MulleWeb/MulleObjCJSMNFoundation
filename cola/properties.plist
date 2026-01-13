@@ -3,6 +3,8 @@
    {
       description="🌼 JSON support for mulle-objc";
       domain="github";
+      language="c";
+      dialect="objc";
       name="MulleObjCJSMNFoundation";
       user="MulleWeb";
       repo="MulleObjCJSMNFoundation";
@@ -31,10 +33,10 @@
    embedded =
    (
       {
-         domain="generic";
+         domain="github";
          name="src/jsmn.h";
          repo="jsmn";
-         url="https://raw.githubusercontent.com/mulle-nat/jsmn/master/jsmn.h";
+         url="https://raw.githubusercontent.com/mulle-nat/jsmn";
          user="mulle-nat";
       }
    );
