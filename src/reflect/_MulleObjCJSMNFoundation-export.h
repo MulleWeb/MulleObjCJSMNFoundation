@@ -14,7 +14,7 @@
 
 
 #import "MulleJSMNParser.h"
-#import "MulleObjCLoader+MulleObjCJSMNFoundation.h"
+#import "MulleObjCDeps+MulleObjCJSMNFoundation.h"
 
 
 #endif

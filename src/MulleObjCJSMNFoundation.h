@@ -39,7 +39,7 @@ extern uint32_t   MulleObjCJSMNFoundation_get_version( void);
 
 #import "MulleJSMNParser.h"
 
-#import "MulleObjCLoader+MulleObjCJSMNFoundation.h"
+#import "MulleObjCDeps+MulleObjCJSMNFoundation.h"
 
 
 #ifdef __has_include
