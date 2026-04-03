@@ -21,5 +21,5 @@ src/NSPropertyListSerialization+JSMN.m
 # contents selected with patternfile ??-source--stage2-sources
 #
 set( STAGE2_SOURCES
-src/MulleObjCLoader+MulleObjCJSMNFoundation.m
+src/MulleObjCDeps+MulleObjCJSMNFoundation.m
 )
