@@ -1,48 +1,11 @@
-### 0.18.9
-
-Various small improvements
-
-### 0.18.8
-
-Various small improvements
-
-### 0.18.7
-
-Various small improvements
-
-### 0.18.6
-
-* Various small improvements
-
-### 0.18.5
-
-* Various small improvements
-
-### 0.18.4
-
-* Various small improvements
-
-### 0.18.3
-
-* moved generic headers into src/generic
-
-### 0.18.2
-
-* Various small improvements
-
-### 0.18.1
-
-* Various small improvements
-
-## 0.18.0
-
-* Various small improvements
+### 0.18.10
 
 
-### 0.17.1
 
-* new mulle-sde project structure
 
-## 0.17.0
 
-* First release version
+
+
+
+* **BREAKING** category renamed from MulleObjCLoader(MulleObjCJSMNFoundation) to MulleObjCDeps(MulleObjCJSMNFoundation); code referencing the old symbol may need updating
+* update generated dependency include to objc-deps.inc and adjust reflection/import headers accordingly

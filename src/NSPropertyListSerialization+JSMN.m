@@ -22,6 +22,7 @@
 
 @implementation NSPropertyListSerialization( JSMN)
 
+@dependency MulleJSMNParser;
 
 // the detection happens in main standard foundation already
 + (void) load
