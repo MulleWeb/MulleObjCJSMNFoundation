@@ -13,7 +13,7 @@
 #define _mulle_objc_jsmn_foundation__provide_h__
 
 
-// no headers
+#include "jsmn.h"
 
 
 #endif
