@@ -55,6 +55,7 @@ set( PUBLIC_HEADERS
 src/MulleJSMNParser.h
 src/MulleObjCDeps+MulleObjCJSMNFoundation.h
 src/MulleObjCJSMNFoundation.h
+src/jsmn.h
 src/reflect/_MulleObjCJSMNFoundation-versioncheck.h
 )
 
