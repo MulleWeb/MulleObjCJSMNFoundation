@@ -21,6 +21,11 @@ Adds JSON capability for property lists via categories to **NSPropertyListSerial
 
 
 
+## Documentation & Guides
+
+* [API Summary](asset/dox/api/toc)
+
+
 ### You are here
 
 ![Overview](overview.dot.svg)
