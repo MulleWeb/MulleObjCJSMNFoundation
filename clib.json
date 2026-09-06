@@ -1,12 +1,12 @@
 {
    "name" : "MulleObjCJSMNFoundation",
-   "version" : "0.18.11",
+   "version" : "0.18.12",
    "description" : "🌼 JSON support for mulle-objc",
    "keywords" : [],
    "license" : "UNLICENSED",
    "repo" : "MulleWeb/MulleObjCJSMNFoundation",
    "src" : [
-      "asset/dox/TOC.md",
+      "asset/dox/api/toc/index.md",
       "src/generic/import-private.h",
       "src/generic/import.h",
       "src/jsmn.h",
