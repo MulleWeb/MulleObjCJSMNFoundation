@@ -1,6 +1,8 @@
 ### 0.18.13
 
-Build system maintenance and dependency updates
+
+
+* dependency renamed to mulle-objc-tools, in clib.json as well as the corresponding `MULLE__OBJC__*` environment variables
 
 ### 0.18.12
 
