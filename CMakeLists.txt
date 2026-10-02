@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.13...99.99)
 
-project( MulleObjCJSMNFoundation VERSION 0.18.12 LANGUAGES C)
+project( MulleObjCJSMNFoundation VERSION 0.18.13 LANGUAGES C)
 
 set( MULLE_PROJECT_TYPE "Library")
 
@@ -33,8 +33,8 @@ include( Library)
 include( InstallLibrary)
 
 if( LINK_PHASE)
-   include( InstallCMakeInclude)
-   include( InstallCMakePackage)
+   include( AddSubdirectorySupport)
+   include( FindPackageSupport)
 endif() 
 
 include( FinalOutput OPTIONAL)

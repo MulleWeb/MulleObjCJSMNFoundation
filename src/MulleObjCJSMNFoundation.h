@@ -41,7 +41,7 @@
  *
  *  version:  major, minor, patch
  */
-#define MULLE_OBJC_JSMN_FOUNDATION_VERSION  ((0UL << 20) | (18 << 8) | 12)
+#define MULLE_OBJC_JSMN_FOUNDATION_VERSION  ((0UL << 20) | (18 << 8) | 13)
 
 
 static inline unsigned int   MulleObjCJSMNFoundation_get_version_major( void)
